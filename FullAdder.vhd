@@ -1,0 +1,16 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY FullAdder IS
+	PORT (
+		A, B, C : IN STD_LOGIC;
+		S, Cout : OUT STD_LOGIC);
+END ENTITY FullAdder;
+ARCHITECTURE Arch OF FullAdder IS
+	SIGNAL s1 : STD_LOGIC;
+BEGIN
+	s1 <= A XOR B;
+	S <= s1 XOR C;
+	Cout <= (A AND B) XOR (s1 AND C);
+
+END Arch;
